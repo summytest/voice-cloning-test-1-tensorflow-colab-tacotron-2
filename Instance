@@ -1,0 +1,12 @@
+instance:
+region: us-east-2
+instanceType: p2.xlarge
+volumes:
+  - name: Tacotron2
+   directory: /workspace
+   size: 50
+docker:
+  file: Dockerfile
+  workingDir: /workspace/project
+  dataRoot: /workspace/docker
+ports: [6006, 8888]

@@ -1,0 +1,12 @@
+scripts:
+preprocess: |
+  curl -0 http://data.keithito.com/data/speech/LJSpeech-1.1.tar.bz2
+  tar xvjf http://data.keithito.com/data/speech/LJSpeech-1.1.tar.bz2
+  rm http://data.keithito.com/data/speech/LJSpeech-1.1.tar.bz2
+  python3 preprocess.py
+  train:  |
+   python train.py --model='Tacotron-2'
+   tensorbaord: |
+    tensorboard --logdir /workspace/project/logs-Tacotron-2
+    jupyter:  |
+      /run_jupyter.sh --allow-root

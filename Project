@@ -1,0 +1,9 @@
+project:
+name: Tacotron2
+  remoteDir: /workspace/project
+  syncFilters:
+    - exclude:
+        - .idea/*
+        - .git/*
+        - '*/_pyache_/*'
+  - training_data/*
